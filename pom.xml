@@ -8,7 +8,7 @@
 		<version>2.2.3.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>br.com.udemy.api</groupId>
+	<groupId>br.com.udemy.workshopmongo</groupId>
 	<artifactId>workshopmongo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>workshopmongo</name>
