@@ -11,6 +11,7 @@ import br.com.udemy.workshopmongo.service.exception.ObjectNotfoundException;
 
 @ControllerAdvice
 public class ResourceExceptionHandler {
+	
 	@ExceptionHandler(ObjectNotfoundException.class)
 	public ResponseEntity<StandardError> objectNotFound(ObjectNotfoundException e, HttpServletRequest request) {
 		String error 		= "Resource not found";
