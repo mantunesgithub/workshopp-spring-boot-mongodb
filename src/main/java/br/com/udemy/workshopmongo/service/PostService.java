@@ -1,5 +1,6 @@
 package br.com.udemy.workshopmongo.service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -24,7 +25,15 @@ public class PostService {
 //	public List<Post> findByTitle(String text) {
 //		return repo.findByTitleContainingIgnoreCase(text);
 //	}
+//  alternativa de pesquisa com @Query	
 	public List<Post> findByTitle(String text) {
 		return repo.searchByTitle(text);
+	}
+	public List<Post> fullSearch(String text, Date minDate, Date maxDate){
+//		Essa data é gerada ate meia noite, então vamos acrescentar 1 dia na data para buscar os posts ate 24h daquele dia
+//		porque ela é armazanada em milisegundos (instante) hhmmssmiliseg
+		
+		maxDate = new Date(maxDate.getTime() + 24 * 60 * 60 * 1000);
+		return repo.fullSearch(text, minDate, maxDate);
 	}
 }
